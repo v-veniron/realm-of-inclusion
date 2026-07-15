@@ -2531,6 +2531,11 @@ document.querySelectorAll('.nav-links a[data-nav]').forEach(function(link) {
 
 /* ── Loading animation ─────────────────────────── */
 function runLoading() {
+  // Fallback: force-hide loading after 6s if stuck
+  setTimeout(function(){
+    var l=document.getElementById('loading');
+    if(l&&!l.classList.contains('hidden')){l.classList.add('hidden');}
+  },6000);
   var counter = document.getElementById('counter');
   var loading = document.getElementById('loading');
   var ring = document.getElementById('progressRing');
@@ -2850,15 +2855,15 @@ function init() {
     if (saved && L[saved]) currentLang = saved;
   } catch(e) {}
 
-  setLang(currentLang);
-  renderHomeTags();
-  renderProjects();
-  renderResearch();
-  renderNews();
-  renderContact();
-  handleHash();
-  startSlideshow();
-  runLoading();
+  try { setLang(currentLang); } catch(e) { console.warn('setLang:', e); }
+  try { renderHomeTags(); } catch(e) { console.warn('renderHomeTags:', e); }
+  try { renderProjects(); } catch(e) { console.warn('renderProjects:', e); }
+  try { renderResearch(); } catch(e) { console.warn('renderResearch:', e); }
+  try { renderNews(); } catch(e) { console.warn('renderNews:', e); }
+  try { renderContact(); } catch(e) { console.warn('renderContact:', e); }
+  try { handleHash(); } catch(e) { console.warn('handleHash:', e); }
+  try { startSlideshow(); } catch(e) { console.warn('startSlideshow:', e); }
+  try { runLoading(); } catch(e) { console.warn('runLoading:', e); }
   if (!window.location.hash || window.location.hash === '#home') { document.getElementById('navbar').classList.add('nav-light'); }
 
   // Auto-close mobile nav on window resize
