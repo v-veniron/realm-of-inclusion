@@ -1300,6 +1300,15 @@ footer .f-copy {
     <div class="counter" id="counter">00<span>%</span></div>
   </div>
 </div>
+<script>
+(function(){
+  var t=setTimeout(function(){
+    var l=document.getElementById('loading');
+    if(l){l.classList.add('hidden');}
+  },4000);
+  window._loadingTimer=t;
+})();
+</script>
 
 <!-- ═══════════════════════════════════════════════ -->
 <!-- NAVIGATION -->
@@ -2550,6 +2559,7 @@ function runLoading() {
       n = target;
       counter.innerHTML = String(target).padStart(2, '0') + '<span>%</span>';
       ring.setAttribute('stroke-dashoffset', '0');
+      if(window._loadingTimer){clearTimeout(window._loadingTimer);}
       setTimeout(function() { loading.classList.add('hidden'); }, 400);
       return;
     }
