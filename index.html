@@ -916,8 +916,8 @@ nav.nav-light.scrolled .nav-links a::after { background: var(--accent); }
 .archive-card.clickable{cursor:pointer;}
 .gallery3d-overlay{position:fixed;inset:0;z-index:2500;background:#e8e4de;opacity:0;visibility:hidden;transition:opacity 0.5s ease,visibility 0.5s ease;}
 .gallery3d-overlay.show{opacity:1;visibility:visible;}
-.gallery3d-overlay canvas{display:block;}
-.gallery3d-back{position:fixed;top:28px;left:28px;z-index:2600;font-family:Inter,sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#555;cursor:pointer;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:3px;transition:all 0.3s ease;}
+.gallery3d-overlay canvas{display:block;touch-action:none;}
+.gallery3d-back{position:fixed;top:28px;left:28px;z-index:2600;-webkit-tap-highlight-color:transparent;touch-action:manipulation;font-family:Inter,sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#555;cursor:pointer;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:3px;transition:all 0.3s ease;}
 .gallery3d-back:hover{background:#fff;color:#111;border-color:#222;}
 .gallery3d-hint{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);z-index:2600;font-family:Inter,sans-serif;font-size:0.6rem;letter-spacing:0.1em;color:#333;text-transform:uppercase;pointer-events:none;transition:opacity 0.6s ease;}
 /* ============================================================
@@ -956,7 +956,7 @@ nav.nav-light.scrolled .nav-links a::after { background: var(--accent); }
 .gallery-tutorial-final.fade-out{opacity:0;transform:translate(-50%,-50%) translateY(-16px);transition:opacity 1.5s ease,transform 1.5s ease;}
 .gallery-tutorial-final-text{font-size:1.1rem;font-weight:300;color:#000;letter-spacing:0.02em;text-align:center;line-height:1.6;}
 .gallery-tutorial-final-sub{font-size:0.7rem;color:#333;font-weight:300;text-align:center;margin-top:6px;letter-spacing:0.04em;}
-@media(max-width:768px){.gallery-tutorial-hint-title{font-size:0.85rem;max-width:200px}.gallery-tutorial-hint-desc{font-size:0.66rem;max-width:200px}}
+@media(max-width:768px){.gallery-tutorial-hint-title{font-size:0.8rem;max-width:180px}.gallery-tutorial-hint-desc{font-size:0.62rem;max-width:180px}.gallery-tutorial-hint{transform:translateY(8px)!important}.gallery-tutorial-hint.show{transform:translateY(0)!important}.gallery3d-back{top:16px;left:16px;font-size:0.6rem;padding:8px 14px}}
 
 
 
@@ -2934,8 +2934,8 @@ document.addEventListener('DOMContentLoaded', init);
     <span class="gallery-tutorial-hint-icon">⌨️</span>
     <div class="gallery-tutorial-hint-text">
       <span class="gallery-tutorial-hint-label">མཐེབ་གཞོང་བརྒྱུད་ནས་འགུལ།</span>
-      <span class="gallery-tutorial-hint-title">Walk with joystick / WASD</span>
-      <span class="gallery-tutorial-hint-desc">使用虚拟摇杆或键盘自由行走 · 手机端使用左下角摇杆</span>
+      <span class="gallery-tutorial-hint-title">Drag to look · Tap to move</span>
+      <span class="gallery-tutorial-hint-desc">单指拖动旋转视角 · 点击地面移动位置</span>
       <div class="gallery-tutorial-wasd" id="tutWasdKeys">
         <key>W</key><key>A</key><key>S</key><key>D</key>
       </div>
@@ -2950,8 +2950,8 @@ document.addEventListener('DOMContentLoaded', init);
 </div>
 
 <div class="gallery3d-overlay" id="gallery3dOverlay"></div>
-<button class="gallery3d-back" id="gallery3dBack" onclick="closeGallery3D()" style="display:none">EXIT GALLERY</button>
-<div class="gallery3d-hint" id="gallery3dHint" style="display:none">DRAG / CLICK / WASD</div>
+<button class="gallery3d-back" id="gallery3dBack" onclick="closeGallery3D()" style="display:none">← 退出</button>
+<div class="gallery3d-hint" id="gallery3dHint" style="display:none">拖动旋转 / 点击移动 / WASD</div>
 
 
 <div class="poster-lightbox" id="posterLightbox" onclick="this.classList.remove('show')">
