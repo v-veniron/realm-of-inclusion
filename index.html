@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="max-age=86400">
 <title>REALM OF INCLUSION</title>
 <meta name="description" content="Tseten Phuntsok — Visual Communication Designer. Exploring the intersection of traditional Tibetan visual culture and contemporary art through typography, imagery, motion, installation and digital media.">
+<!-- Three.js loaded on demand when gallery opens -->
 <script type="importmap">
 {
   "imports": {
@@ -475,6 +477,7 @@ nav.nav-light.scrolled .nav-links a::after { background: var(--accent); }
 }
 
 /* Project item with cover image */
+.project-item{content-visibility:auto;contain-intrinsic-size:auto 80px;}
 .project-item.has-cover {
   position: relative;
   overflow: hidden;
@@ -1197,7 +1200,7 @@ footer .f-copy {
   background: #eae7e1; cursor: pointer;
   aspect-ratio: 3/4;
 }
-.poster-figure img {
+.poster-figure img { content-visibility:auto;contain-intrinsic-size:auto 300px;
   display: block; width: 100%; height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.22,0.61,0.36,1);
@@ -1315,7 +1318,7 @@ footer .f-copy {
 <!-- ═══════════════════════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#home" class="nav-logo" data-nav="home"><img src="logo-realm.png" alt="REALM" style="height:48px;vertical-align:middle;"></a>
+    <a href="#home" class="nav-logo" data-nav="home"><img src="logo-realm.png" fetchpriority="high" alt="REALM" style="height:48px;vertical-align:middle;" loading="lazy" decoding="async"></a>
     <div class="nav-links" id="navLinks">
       <a href="#projects" data-nav="projects" data-i18n="navProjects">作品</a>
       <a href="#archive" data-nav="archive-artwork" data-i18n="navArtSpace" onclick="openGallery3D();return false;">艺术空间</a>
@@ -1347,7 +1350,7 @@ footer .f-copy {
 <!-- ═══════════════════════════════════════════════ -->
 <div class="page active" id="home">
   <div class="home-video-wrap">
-    <video autoplay loop muted playsinline>
+    <video autoplay loop muted playsinline preload="none" poster="">
       <source src="home-bg.mp4" type="video/mp4">
     </video>
     <div class="home-video-overlay"></div>
@@ -1368,19 +1371,19 @@ footer .f-copy {
 <!-- ═══════════════════════════════════════════════ -->
 <div class="page" id="projects">
   <div class="projects-cover" id="projectsCover">
-      <img src="DSC03582.JPG" alt="Project photo 1" class="slideshow-img active">
-      <img src="IMG_3696.JPG" alt="Project photo 2" class="slideshow-img">
-      <img src="9.webp" alt="Project photo 3" class="slideshow-img">
-      <img src="10.webp" alt="Project photo 5" class="slideshow-img">
-      <img src="未标题-2.jpg" alt="Project photo 6" class="slideshow-img">
-      <img src="DSC04325.JPG" alt="Project photo 7" class="slideshow-img">
-      <img src="4.webp" alt="Project photo 8" class="slideshow-img">
-      <img src="RAMALU 背景.webp" alt="Project photo 9" class="slideshow-img">
-      <img src="IMG_0220.jpg" alt="Project photo 10" class="slideshow-img">
-      <img src="2.webp" alt="Project photo 11" class="slideshow-img">
-      <img src="1_副本.jpg" alt="Project photo 12" class="slideshow-img">
-      <img src="1.webp" alt="Project photo 13" class="slideshow-img">
-      <img src="IMG_5820.JPG" alt="Project photo 14" class="slideshow-img">
+      <img src="DSC03582.JPG" alt="Project photo 1" class="slideshow-img active" loading="lazy" decoding="async">
+      <img src="IMG_3696.JPG" alt="Project photo 2" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="9.webp" alt="Project photo 3" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="10.webp" alt="Project photo 5" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="未标题-2.jpg" alt="Project photo 6" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="DSC04325.JPG" alt="Project photo 7" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="4.webp" alt="Project photo 8" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="RAMALU 背景.webp" alt="Project photo 9" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="IMG_0220.jpg" alt="Project photo 10" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="2.webp" alt="Project photo 11" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="1_副本.jpg" alt="Project photo 12" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="1.webp" alt="Project photo 13" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="IMG_5820.JPG" alt="Project photo 14" class="slideshow-img" loading="lazy" decoding="async">
     </div>
   <div class="page-inner">
     <div class="sec-label" data-i18n="projectsLabel">PROJECTS</div>
@@ -1449,7 +1452,7 @@ footer .f-copy {
   <div class="page-inner">
     <div class="sec-label" data-i18n="coffeeLabel">COFFEE SHOP</div>
     <div class="coffee-content">
-      <div class="coffee-logo-wrap"><img src="coffee-logo.png" alt="INFINITY+1" style="height:240px;"></div>
+      <div class="coffee-logo-wrap"><img src="coffee-logo.png" alt="INFINITY+1" style="height:240px;" loading="lazy" decoding="async"></div>
       <h2 data-i18n="coffeeTitle">INFINITY +1 COFFEE</h2>
       <p data-i18n="coffeeP1"></p>
       <p data-i18n="coffeeP2"></p>
@@ -1458,7 +1461,7 @@ footer .f-copy {
     
     <div class="coffee-menu">
       <div class="coffee-menu-grid">
-        <div class="cm-item-img"><img src="coffee-latte.png" alt="Latte"></div>
+        <div class="cm-item-img"><img src="coffee-latte.png" alt="Latte" loading="lazy" decoding="async"></div>
       </div>
       <div class="coffee-menu-subtitle">地址</div>
       <div class="coffee-menu-address" data-i18n="coffeeAddress">拉萨市城关区塔杰郭瓦路嘎吉四区 13-4 商品房</div>
@@ -2442,16 +2445,16 @@ function openProject(id) {
     + '<div class="modal-info-block"><div class="label">' + d.infoKeywords + '</div><div class="value">' + p.keywords + '</div></div>'
     + '<div class="modal-info-block"><div class="label">' + d.infoRole + '</div><div class="value">' + p.role + '</div></div>'
     + '</div>'
-    + (p.image ? '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + p.image + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:contain;"></div>' : '<div class="modal-img"><span>' + p.title + ' — Project Image</span></div>')
+    + (p.image ? '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + p.image + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>' : '<div class="modal-img"><span>' + p.title + ' — Project Image</span></div>')
     + '<div class="modal-sec-label">' + d.conceptLabel + '</div>'
     + '<div class="modal-sec-body">' + p.concept.map(function(c) { return '<p>' + c + '</p>'; }).join('') + '</div>'
-    + (p.research ? '<div class="modal-sec-label">' + d.researchLabel + '</div><div class="modal-sec-body"><p>' + p.research + '</p></div>' + (p.researchImage ? '<img src="' + p.researchImage + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') : '')
-    + (p.process ? '<div class="modal-sec-label">' + d.processLabel + '</div><div class="modal-sec-body"><p>' + p.process + '</p></div>' + (p.processImage ? '<img src="' + p.processImage + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.processImage2 ? '<img src="' + p.processImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') : '')
-    + (p.showcase ? '<div class="modal-sec-label">' + d.showcaseLabel + '</div><div class="modal-sec-body"><p>' + p.showcase + '</p></div>' + (p.showcaseImage ? '<img src="' + p.showcaseImage + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.showcaseImage2 ? '<img src="' + p.showcaseImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.showcaseImage3 ? '<img src="' + p.showcaseImage3 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.showcaseImage4 ? '<img src="' + p.showcaseImage4 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') : '')
+    + (p.research ? '<div class="modal-sec-label">' + d.researchLabel + '</div><div class="modal-sec-body"><p>' + p.research + '</p></div>' + (p.researchImage ? '<img src="' + p.researchImage + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') : '')
+    + (p.process ? '<div class="modal-sec-label">' + d.processLabel + '</div><div class="modal-sec-body"><p>' + p.process + '</p></div>' + (p.processImage ? '<img src="' + p.processImage + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.processImage2 ? '<img src="' + p.processImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') : '')
+    + (p.showcase ? '<div class="modal-sec-label">' + d.showcaseLabel + '</div><div class="modal-sec-body"><p>' + p.showcase + '</p></div>' + (p.showcaseImage ? '<img src="' + p.showcaseImage + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.showcaseImage2 ? '<img src="' + p.showcaseImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.showcaseImage3 ? '<img src="' + p.showcaseImage3 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.showcaseImage4 ? '<img src="' + p.showcaseImage4 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') : '')
     + (p.videoFile ? '<div class="modal-sec-label">' + d.videoLabel + '</div><video src="' + p.videoFile + '" controls style="width:100%;height:auto;display:block;margin-top:80px;"></video>' : (p.video ? '<div class="modal-sec-label">' + d.videoLabel + '</div><div class="modal-sec-body"><p>' + p.video + '</p></div>' : ''))
     + (p.images && p.images.length > 1
         ? p.images.slice(1).map(function(img, i) {
-            return '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + img + '" alt="' + p.title + ' — Page ' + (i + 2) + '" style="width:100%;height:auto;display:block;"></div>';
+            return '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + img + '" alt="' + p.title + ' — Page ' + (i + 2) + '" style="width:100%;height:auto;display:block;" loading="lazy" decoding="async"></div>';
           }).join('')
         : '');
 
@@ -2956,7 +2959,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 <div class="poster-lightbox" id="posterLightbox" onclick="this.classList.remove('show')">
   <button class="poster-lightbox-close" onclick="document.getElementById('posterLightbox').classList.remove('show')">&times;</button>
-  <img id="posterLightboxImg" src="" alt="">
+  <img id="posterLightboxImg" src="" alt="" loading="lazy" decoding="async">
 </div>
 
 <script>
