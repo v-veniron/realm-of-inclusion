@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="max-age=86400">
 <title>REALM OF INCLUSION</title>
 <meta name="description" content="Tseten Phuntsok — Visual Communication Designer. Exploring the intersection of traditional Tibetan visual culture and contemporary art through typography, imagery, motion, installation and digital media.">
-<!-- Three.js loaded on demand when gallery opens -->
 <script type="importmap">
 {
   "imports": {
@@ -477,7 +475,6 @@ nav.nav-light.scrolled .nav-links a::after { background: var(--accent); }
 }
 
 /* Project item with cover image */
-.project-item{content-visibility:auto;contain-intrinsic-size:auto 80px;}
 .project-item.has-cover {
   position: relative;
   overflow: hidden;
@@ -919,8 +916,8 @@ nav.nav-light.scrolled .nav-links a::after { background: var(--accent); }
 .archive-card.clickable{cursor:pointer;}
 .gallery3d-overlay{position:fixed;inset:0;z-index:2500;background:#e8e4de;opacity:0;visibility:hidden;transition:opacity 0.5s ease,visibility 0.5s ease;}
 .gallery3d-overlay.show{opacity:1;visibility:visible;}
-.gallery3d-overlay canvas{display:block;touch-action:none;}
-.gallery3d-back{position:fixed;top:28px;left:28px;z-index:2600;-webkit-tap-highlight-color:transparent;touch-action:manipulation;font-family:Inter,sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#555;cursor:pointer;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:3px;transition:all 0.3s ease;}
+.gallery3d-overlay canvas{display:block;}
+.gallery3d-back{position:fixed;top:28px;left:28px;z-index:2600;font-family:Inter,sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#555;cursor:pointer;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:3px;transition:all 0.3s ease;}
 .gallery3d-back:hover{background:#fff;color:#111;border-color:#222;}
 .gallery3d-hint{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);z-index:2600;font-family:Inter,sans-serif;font-size:0.6rem;letter-spacing:0.1em;color:#333;text-transform:uppercase;pointer-events:none;transition:opacity 0.6s ease;}
 /* ============================================================
@@ -959,7 +956,7 @@ nav.nav-light.scrolled .nav-links a::after { background: var(--accent); }
 .gallery-tutorial-final.fade-out{opacity:0;transform:translate(-50%,-50%) translateY(-16px);transition:opacity 1.5s ease,transform 1.5s ease;}
 .gallery-tutorial-final-text{font-size:1.1rem;font-weight:300;color:#000;letter-spacing:0.02em;text-align:center;line-height:1.6;}
 .gallery-tutorial-final-sub{font-size:0.7rem;color:#333;font-weight:300;text-align:center;margin-top:6px;letter-spacing:0.04em;}
-@media(max-width:768px){.gallery-tutorial-hint-title{font-size:0.8rem;max-width:180px}.gallery-tutorial-hint-desc{font-size:0.62rem;max-width:180px}.gallery-tutorial-hint{transform:translateY(8px)!important}.gallery-tutorial-hint.show{transform:translateY(0)!important}.gallery3d-back{top:16px;left:16px;font-size:0.6rem;padding:8px 14px}}
+@media(max-width:768px){.gallery-tutorial-hint-title{font-size:0.85rem;max-width:200px}.gallery-tutorial-hint-desc{font-size:0.66rem;max-width:200px}}
 
 
 
@@ -1200,7 +1197,7 @@ footer .f-copy {
   background: #eae7e1; cursor: pointer;
   aspect-ratio: 3/4;
 }
-.poster-figure img { content-visibility:auto;contain-intrinsic-size:auto 300px;
+.poster-figure img {
   display: block; width: 100%; height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.22,0.61,0.36,1);
@@ -1269,7 +1266,7 @@ footer .f-copy {
 
 /* ── Coffee page background ──────────────────── */
 #coffee.page {
-  background: url('cafe-bg.webp') center/cover no-repeat;
+  background: url('coffee-bg.jpg') center/80% no-repeat;
 }
 #coffee.page .page-inner {
   background: rgba(255,255,255,0.75);
@@ -1303,22 +1300,13 @@ footer .f-copy {
     <div class="counter" id="counter">00<span>%</span></div>
   </div>
 </div>
-<script>
-(function(){
-  var t=setTimeout(function(){
-    var l=document.getElementById('loading');
-    if(l){l.classList.add('hidden');}
-  },4000);
-  window._loadingTimer=t;
-})();
-</script>
 
 <!-- ═══════════════════════════════════════════════ -->
 <!-- NAVIGATION -->
 <!-- ═══════════════════════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#home" class="nav-logo" data-nav="home"><img src="logo-realm.png" fetchpriority="high" alt="REALM" style="height:48px;vertical-align:middle;" loading="lazy" decoding="async"></a>
+    <a href="#home" class="nav-logo" data-nav="home"><img src="logo-realm.png" alt="REALM" style="height:48px;vertical-align:middle;"></a>
     <div class="nav-links" id="navLinks">
       <a href="#projects" data-nav="projects" data-i18n="navProjects">作品</a>
       <a href="#archive" data-nav="archive-artwork" data-i18n="navArtSpace" onclick="openGallery3D();return false;">艺术空间</a>
@@ -1350,8 +1338,8 @@ footer .f-copy {
 <!-- ═══════════════════════════════════════════════ -->
 <div class="page active" id="home">
   <div class="home-video-wrap">
-    <video autoplay loop muted playsinline preload="none" poster="">
-      <source src="home-bg.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline>
+      <source src="home-bg.mp4" type="video/quicktime">
     </video>
     <div class="home-video-overlay"></div>
   </div>
@@ -1371,19 +1359,19 @@ footer .f-copy {
 <!-- ═══════════════════════════════════════════════ -->
 <div class="page" id="projects">
   <div class="projects-cover" id="projectsCover">
-      <img src="DSC03582.JPG" alt="Project photo 1" class="slideshow-img active" loading="lazy" decoding="async">
-      <img src="IMG_3696.JPG" alt="Project photo 2" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="9.webp" alt="Project photo 3" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="10.webp" alt="Project photo 5" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="未标题-2.jpg" alt="Project photo 6" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="DSC04325.JPG" alt="Project photo 7" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="4.webp" alt="Project photo 8" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="RAMALU 背景.webp" alt="Project photo 9" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="IMG_0220.jpg" alt="Project photo 10" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="2.webp" alt="Project photo 11" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="1_副本.jpg" alt="Project photo 12" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="1.webp" alt="Project photo 13" class="slideshow-img" loading="lazy" decoding="async">
-      <img src="IMG_5820.JPG" alt="Project photo 14" class="slideshow-img" loading="lazy" decoding="async">
+      <img src="DSC03582.jpg" alt="Project photo 1" class="slideshow-img active">
+      <img src="IMG_3696.jpg" alt="Project photo 2" class="slideshow-img">
+      <img src="9.webp" alt="Project photo 3" class="slideshow-img">
+      <img src="10.webp" alt="Project photo 5" class="slideshow-img">
+      <img src="未标题-2.jpg" alt="Project photo 6" class="slideshow-img">
+      <img src="DSC04325.jpg" alt="Project photo 7" class="slideshow-img">
+      <img src="4.webp" alt="Project photo 8" class="slideshow-img">
+      <img src="RAMALU 背景.webp" alt="Project photo 9" class="slideshow-img">
+      <img src="IMG_0220.jpg" alt="Project photo 10" class="slideshow-img">
+      <img src="2.webp" alt="Project photo 11" class="slideshow-img">
+      <img src="1_副本.jpg" alt="Project photo 12" class="slideshow-img">
+      <img src="1.webp" alt="Project photo 13" class="slideshow-img">
+      <img src="IMG_5820.jpg" alt="Project photo 14" class="slideshow-img">
     </div>
   <div class="page-inner">
     <div class="sec-label" data-i18n="projectsLabel">PROJECTS</div>
@@ -1448,11 +1436,11 @@ footer .f-copy {
 <!-- ═══════════════════════════════════════════════ -->
 <!-- COFFEE SHOP PAGE -->
 <!-- ═══════════════════════════════════════════════ -->
-<div class="page" id="coffee">
+<div class="page" id="coffee" style="background:url('cafe-bg.webp') center/cover no-repeat;">
   <div class="page-inner">
     <div class="sec-label" data-i18n="coffeeLabel">COFFEE SHOP</div>
     <div class="coffee-content">
-      <div class="coffee-logo-wrap"><img src="coffee-logo.png" alt="INFINITY+1" style="height:240px;" loading="lazy" decoding="async"></div>
+      <div class="coffee-logo-wrap"><img src="coffee-logo.png" alt="INFINITY+1" style="height:240px;"></div>
       <h2 data-i18n="coffeeTitle">INFINITY +1 COFFEE</h2>
       <p data-i18n="coffeeP1"></p>
       <p data-i18n="coffeeP2"></p>
@@ -1461,7 +1449,7 @@ footer .f-copy {
     
     <div class="coffee-menu">
       <div class="coffee-menu-grid">
-        <div class="cm-item-img"><img src="coffee-latte.png" alt="Latte" loading="lazy" decoding="async"></div>
+        <div class="cm-item-img"><img src="coffee-latte.jpg" alt="Latte"></div>
       </div>
       <div class="coffee-menu-subtitle">地址</div>
       <div class="coffee-menu-address" data-i18n="coffeeAddress">拉萨市城关区塔杰郭瓦路嘎吉四区 13-4 商品房</div>
@@ -1890,15 +1878,15 @@ L.zh = {
       keywords: '服装 / 文案 / 装帧 / 视觉系统',
       role: '视觉设计 / 文案 / 排版',
       concept: [
-        'RAMALU 是一个融合服装文化与视觉传达的项目，通过文字排印与装帧设计探索服装品牌在当代视觉语境中的表达可能。',
-        '项目从服装的材质、结构与文化内涵出发，以极简的文字排印和装帧设计语言构建统一的视觉系统。'
+        'RAMALU 是一个融合文化与视觉传达的项目，通过文字排印与装帧设计探索在当代视觉语境中的表达可能。',
+        '项目从材质、结构与文化内涵出发，以极简的文字排印和装帧设计语言构建统一的视觉系统。'
       ],
-      research: '对服装品牌的视觉系统、材质运用与色彩趋势进行深入调研，分析文字排印与装帧设计的前沿案例，为品牌视觉系统的构建奠定基础。',
+      research: '对视觉系统、材质运用与色彩趋势进行深入调研，分析文字排印与装帧设计的前沿案例，为视觉系统的构建奠定基础。',
       researchImage: 'RAMALU 调研.webp',
-      process: '从服装品牌调研入手，提取材质与色彩方向，建立统一的文字排印与装帧系统，经过多轮封面方案探索与印刷测试，最终完成成品制作。',
-      processImage: 'RAMALU过程.png?v=2',
+      process: '从提取材质与色彩方向，建立统一的文字排印与装帧系统，经过多轮封面方案探索与印刷测试，最终完成成品制作。',
+      processImage: 'RAMALU过程.jpg?v=2',
       processImage2: 'RAMALU 过程2.webp',
-      showcase: '最终呈现包含完整的服装品牌文案系统、装帧设计手册及印刷物料，形成统一的品牌视觉识别体系。',
+      showcase: '最终呈现包含完整的文案系统、装帧设计手册及印刷物料，形成统一的视觉识别体系。',
       showcaseImage: 'RAMALU 成品.webp',
       showcaseImage2: 'RAMALU 成品2.webp'
     },
@@ -1910,7 +1898,7 @@ L.zh = {
       images: ['KUOWA封面.webp'],
       type: '装置艺术 + 仪式', year: '2025',
       medium: '装置 / 空间 / 影像 / 声音',
-      keywords: '装置艺术 / 仪式 / 空间体验 / 西藏文化',
+      keywords: '装置艺术 / 仪式 / 空间体验',
       role: '概念 / 装置设计 / 视觉 / 执行',
       concept: [
         'KUOWA 通过装置艺术与仪式感的空间体验，探索西藏传统文化在当代艺术语境中的重新诠释。',
@@ -1928,23 +1916,23 @@ L.zh = {
     },
     {
       id: 'weisang', title: 'WEISANG', subtitle: '',
-      bgImage: 'IMG_2636.JPG',
+      bgImage: 'IMG_2636.jpg',
       image: 'WEISANG 封面.webp',
       images: ['WEISANG 封面.webp'],
       type: '实验图像 + 平面设计', year: '2025',
       medium: '数字图像 / 平面设计 / 印刷',
-      keywords: '实验图像 / 平面设计 / 西藏文化 / 数字艺术',
+      keywords: '实验图像 / 平面设计 / 数字艺术',
       role: '视觉设计 / 图像处理 / 平面设计',
       concept: [
-        'WEISANG 是一个实验性的图像与平面设计项目，探索传统西藏视觉元素在数字媒介中的转化与重构。',
-        '通过实验性的图像处理技术，项目将传统符号、色彩与形式转化为当代视觉语言。'
+        'WEISANG 是一个实验性的图像与平面设计项目，探索传统习俗在数字媒介中的转化与重构。',
+        '通过实验性的图像处理技术，项目将传统民俗、色彩与形式转化为当代视觉语言。'
       ],
-      research: '系统梳理传统西藏视觉符号的形态特征与色彩体系，调研数字图像处理技术在文化符号转化中的应用可能。',
+      research: '系统梳理传统西藏煨桑习俗的形式，调研数字图像处理技术在煨桑转化中的应用可能。',
       researchImage: 'Weisang 研究.webp',
-      process: '对传统西藏视觉符号进行系统性研究，利用数字图像技术进行符号重构与实验，最终输出海报设计与印刷成品。',
+      process: '对传统西藏传统煨桑习俗进行系统性研究，利用数字图像技术进行桑烟轮廓的图像实验，最终输出海报设计与印刷成品。',
       processImage: 'weisang 过程1.webp',
       processImage2: 'weisang 过程2.webp',
-      showcase: '最终输出包括系列实验海报、数字图像作品及印刷成品，呈现传统符号在当代视觉语言中的全新面貌。',
+      showcase: '最终输出包括系列实验海报、数字图像作品及印刷成品，呈现传统煨桑习俗在当代视觉语言中的全新面貌。',
       showcaseImage: 'Weisang 展示1.webp',
       showcaseImage2: 'weisang 展示2.webp',
       showcaseImage3: 'weisang 展示3.webp',
@@ -1954,12 +1942,12 @@ L.zh = {
     {
       id: 'gikuo', title: 'GIKUO', subtitle: '',
       theme: 'bw',
-      bgImage: 'GIKUO 背景.JPG',
+      bgImage: 'GIKUO 背景.jpg',
       image: 'GIKUO封面.webp',
       images: ['GIKUO封面.webp'],
       type: '实验图像 + 动态影像', year: '2026',
       medium: '动态影像 / 数字图像 / 声音设计',
-      keywords: '实验影像 / 动态图像 / 数字艺术 / 西藏元素',
+      keywords: '实验影像 / 动态图像 / 数字艺术',
       role: '概念 / 视觉设计 / 动态影像 / 声音',
       concept: [
         'GIKUO 将实验图像与动态影像结合，探索时间、空间与视觉感知的关系。',
@@ -2062,7 +2050,7 @@ L.en = {
       research: 'In-depth research on fashion brand visual systems, material usage and colour trends, analysing cutting-edge typography and book design cases to establish a foundation for the brand visual system.',
       researchImage: 'RAMALU 调研.webp',
       process: 'Starting from fashion brand research, material and colour direction were established, a unified typography and book design system was built, followed by multiple rounds of cover exploration, print testing, and final production.',
-      processImage: 'RAMALU过程.png?v=2',
+      processImage: 'RAMALU过程.jpg?v=2',
       processImage2: 'RAMALU 过程2.webp',
       showcase: 'The final output includes a complete fashion brand copywriting system, book design manual and printed materials, forming a unified brand visual identity system.',
       showcaseImage: 'RAMALU 成品.webp',
@@ -2094,7 +2082,7 @@ L.en = {
     },
     {
       id: 'weisang', title: 'WEISANG', subtitle: '',
-      bgImage: 'IMG_2636.JPG',
+      bgImage: 'IMG_2636.jpg',
       image: 'WEISANG 封面.webp',
       images: ['WEISANG 封面.webp'],
       type: 'Experimental Image + Graphic Design', year: '2025',
@@ -2120,7 +2108,7 @@ L.en = {
     {
       id: 'gikuo', title: 'GIKUO', subtitle: '',
       theme: 'bw',
-      bgImage: 'GIKUO 背景.JPG',
+      bgImage: 'GIKUO 背景.jpg',
       image: 'GIKUO封面.webp',
       images: ['GIKUO封面.webp'],
       type: 'Experimental Image + Motion Graphics', year: '2026',
@@ -2229,7 +2217,7 @@ L.bo = {
       research: 'གྱོན་ཆས་ཚོང་རྟགས་ཀྱི་མཐོང་རྣམ་མ་ལག་དང་། དངོས་རྫས་བེད་སྤྱོད། ཚོན་མདོག་གི་ཁྱབ་ཁོངས་བཅས་ལ་ཟབ་ཞིབ་བྱས་ཏེ། ཡིག་གཟུགས་བཀོད་སྒྲིག་དང་དཔེ་བཀོད་ཀྱི་སྔོན་ཐོན་དཔེ་མིག་ལ་དབྱེ་ཞིབ་བྱས་པ།',
       researchImage: 'RAMALU 调研.webp',
       process: 'གྱོན་ཆས་ཚོང་རྟགས་ཀྱི་ཞིབ་འཇུག་ནས་འགོ་འཛུགས་ཏེ། དངོས་རྫས་དང་ཚོན་མདོག་གི་ཁྱབ་ཁོངས་ངེས་འཛིན་བྱས་པ་དང་། གཅིག་གྱུར་གྱི་ཡིག་གཟུགས་བཀོད་སྒྲིག་དང་དཔེ་བཀོད་མ་ལག་བསྐྲུན་ཏེ། ཁ་ཕྱེའི་ཐབས་ཤེས་ཞིབ་འཚོལ་དང་པར་སྐྲུན་ཚོད་ལྟ་བརྒྱུད་དེ་ཐོན་རྫས་མཐའ་མ་བསྐྲུན།',
-      processImage: 'RAMALU过程.png?v=2',
+      processImage: 'RAMALU过程.jpg?v=2',
       processImage2: 'RAMALU 过程2.webp',
       showcase: 'མཐའ་མའི་ཐོན་རྫས་སུ་ཆ་ཚང་བའི་གྱོན་ཆས་ཚོང་རྟགས་ཡིག་རྒྱུན་མ་ལག་དང་། དཔེ་བཀོད་དེ་བཟོའི་ལག་དེབ། པར་སྐྲུན་དངོས་རྫས་བཅས་འདུས་ཡོད།',
       showcaseImage: 'RAMALU 成品.webp',
@@ -2261,7 +2249,7 @@ L.bo = {
     },
     {
       id: 'weisang', title: 'WEISANG', subtitle: '',
-      bgImage: 'IMG_2636.JPG',
+      bgImage: 'IMG_2636.jpg',
       image: 'WEISANG 封面.webp',
       images: ['WEISANG 封面.webp'],
       type: 'ཚོད་ལྟའི་པར་རིས་དང་ཐལ་བཀོད་དེ་བཟོ།', year: '༢༠༢༥',
@@ -2287,7 +2275,7 @@ L.bo = {
     {
       id: 'gikuo', title: 'GIKUO', subtitle: '',
       theme: 'bw',
-      bgImage: 'GIKUO 背景.JPG',
+      bgImage: 'GIKUO 背景.jpg',
       image: 'GIKUO封面.webp',
       images: ['GIKUO封面.webp'],
       type: 'ཚོད་ལྟའི་པར་རིས་དང་འགུལ་པའི་པར་རིས།', year: '༢༠༢༦',
@@ -2445,16 +2433,16 @@ function openProject(id) {
     + '<div class="modal-info-block"><div class="label">' + d.infoKeywords + '</div><div class="value">' + p.keywords + '</div></div>'
     + '<div class="modal-info-block"><div class="label">' + d.infoRole + '</div><div class="value">' + p.role + '</div></div>'
     + '</div>'
-    + (p.image ? '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + p.image + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>' : '<div class="modal-img"><span>' + p.title + ' — Project Image</span></div>')
+    + (p.image ? '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + p.image + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:contain;"></div>' : '<div class="modal-img"><span>' + p.title + ' — Project Image</span></div>')
     + '<div class="modal-sec-label">' + d.conceptLabel + '</div>'
     + '<div class="modal-sec-body">' + p.concept.map(function(c) { return '<p>' + c + '</p>'; }).join('') + '</div>'
-    + (p.research ? '<div class="modal-sec-label">' + d.researchLabel + '</div><div class="modal-sec-body"><p>' + p.research + '</p></div>' + (p.researchImage ? '<img src="' + p.researchImage + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') : '')
-    + (p.process ? '<div class="modal-sec-label">' + d.processLabel + '</div><div class="modal-sec-body"><p>' + p.process + '</p></div>' + (p.processImage ? '<img src="' + p.processImage + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.processImage2 ? '<img src="' + p.processImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') : '')
-    + (p.showcase ? '<div class="modal-sec-label">' + d.showcaseLabel + '</div><div class="modal-sec-body"><p>' + p.showcase + '</p></div>' + (p.showcaseImage ? '<img src="' + p.showcaseImage + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.showcaseImage2 ? '<img src="' + p.showcaseImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.showcaseImage3 ? '<img src="' + p.showcaseImage3 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') + (p.showcaseImage4 ? '<img src="' + p.showcaseImage4 + '" style="width:100%;height:auto;display:block;margin-top:80px;" loading="lazy" decoding="async">' : '') : '')
+    + (p.research ? '<div class="modal-sec-label">' + d.researchLabel + '</div><div class="modal-sec-body"><p>' + p.research + '</p></div>' + (p.researchImage ? '<img src="' + p.researchImage + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') : '')
+    + (p.process ? '<div class="modal-sec-label">' + d.processLabel + '</div><div class="modal-sec-body"><p>' + p.process + '</p></div>' + (p.processImage ? '<img src="' + p.processImage + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.processImage2 ? '<img src="' + p.processImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') : '')
+    + (p.showcase ? '<div class="modal-sec-label">' + d.showcaseLabel + '</div><div class="modal-sec-body"><p>' + p.showcase + '</p></div>' + (p.showcaseImage ? '<img src="' + p.showcaseImage + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.showcaseImage2 ? '<img src="' + p.showcaseImage2 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.showcaseImage3 ? '<img src="' + p.showcaseImage3 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') + (p.showcaseImage4 ? '<img src="' + p.showcaseImage4 + '" style="width:100%;height:auto;display:block;margin-top:80px;">' : '') : '')
     + (p.videoFile ? '<div class="modal-sec-label">' + d.videoLabel + '</div><video src="' + p.videoFile + '" controls style="width:100%;height:auto;display:block;margin-top:80px;"></video>' : (p.video ? '<div class="modal-sec-label">' + d.videoLabel + '</div><div class="modal-sec-body"><p>' + p.video + '</p></div>' : ''))
     + (p.images && p.images.length > 1
         ? p.images.slice(1).map(function(img, i) {
-            return '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + img + '" alt="' + p.title + ' — Page ' + (i + 2) + '" style="width:100%;height:auto;display:block;" loading="lazy" decoding="async"></div>';
+            return '<div class="modal-img" style="aspect-ratio:auto;"><img src="' + img + '" alt="' + p.title + ' — Page ' + (i + 2) + '" style="width:100%;height:auto;display:block;"></div>';
           }).join('')
         : '');
 
@@ -2543,11 +2531,6 @@ document.querySelectorAll('.nav-links a[data-nav]').forEach(function(link) {
 
 /* ── Loading animation ─────────────────────────── */
 function runLoading() {
-  // Fallback: force-hide loading after 6s if stuck
-  setTimeout(function(){
-    var l=document.getElementById('loading');
-    if(l&&!l.classList.contains('hidden')){l.classList.add('hidden');}
-  },6000);
   var counter = document.getElementById('counter');
   var loading = document.getElementById('loading');
   var ring = document.getElementById('progressRing');
@@ -2562,7 +2545,6 @@ function runLoading() {
       n = target;
       counter.innerHTML = String(target).padStart(2, '0') + '<span>%</span>';
       ring.setAttribute('stroke-dashoffset', '0');
-      if(window._loadingTimer){clearTimeout(window._loadingTimer);}
       setTimeout(function() { loading.classList.add('hidden'); }, 400);
       return;
     }
@@ -2662,9 +2644,9 @@ var THREE=await import('three');
 var W=window.innerWidth,hh=window.innerHeight;
 var S=new THREE.Scene();S.background=new THREE.Color('#e8e4de');S.fog=new THREE.Fog('#e8e4de',16,38);
 var C=new THREE.PerspectiveCamera(58,W/hh,0.3,50);C.position.set(0,1.65,5);C.rotation.order='YXZ';C.lookAt(0,1.6,-3);
-var R=new THREE.WebGLRenderer({antialias:false});R.setSize(W,hh);R.setPixelRatio(Math.min(window.devicePixelRatio,1.2));R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.1;O.appendChild(R.domElement);
+var R=new THREE.WebGLRenderer({antialias:true});R.setSize(W,hh);R.setPixelRatio(Math.min(window.devicePixelRatio,1.5));R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.1;O.appendChild(R.domElement);
 S.add(new THREE.AmbientLight('#fffdf5',2));
-var sun=new THREE.DirectionalLight('#fffef8',2.5);sun.position.set(5,12,4);sun.castShadow=true;sun.shadow.mapSize.set(512,512);sun.shadow.camera.near=0.3;sun.shadow.camera.far=50;sun.shadow.camera.left=-20;sun.shadow.camera.right=20;sun.shadow.camera.top=14;sun.shadow.camera.bottom=-10;sun.shadow.bias=-0.0001;S.add(sun);
+var sun=new THREE.DirectionalLight('#fffef8',2.5);sun.position.set(5,12,4);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.near=0.3;sun.shadow.camera.far=50;sun.shadow.camera.left=-20;sun.shadow.camera.right=20;sun.shadow.camera.top=14;sun.shadow.camera.bottom=-10;sun.shadow.bias=-0.0001;S.add(sun);
 var fl=new THREE.DirectionalLight('#f0e8d8',0.8);fl.position.set(-6,4,-4);S.add(fl);
 var WH=3.6,wM=new THREE.MeshStandardMaterial({color:'#f6f3ee',roughness:0.6,metalness:0.01}),fM=new THREE.MeshStandardMaterial({color:'#e6e2d8',roughness:0.4,metalness:0.03}),pM=new THREE.MeshStandardMaterial({color:'#f2efe8',roughness:0.55,metalness:0.02});
 var fG=new THREE.PlaneGeometry(22,20);var flr=new THREE.Mesh(fG,fM);flr.rotation.x=-Math.PI/2;flr.position.y=-0.05;flr.receiveShadow=true;flr.name='floor';S.add(flr);
@@ -2850,12 +2832,10 @@ var ks={};document.addEventListener('keydown',function(e){ks[e.key.toLowerCase()
 
 window.addEventListener('resize',function(){W=window.innerWidth;hh=window.innerHeight;C.aspect=W/hh;C.updateProjectionMatrix();R.setSize(W,hh);});
 var clk=new THREE.Clock();
-var _di=new THREE.Vector3(),_np=new THREE.Vector3(),_to=new THREE.Vector3(),_np2=new THREE.Vector3();
-function anim(){if(!gallery3D||!gallery3D.active)return;requestAnimationFrame(anim);var dt=Math.min(clk.getDelta(),0.1);var spd=4.2;
-_di.set(0,0,0);
-if(ks['w']||ks['arrowup'])_di.z-=1;if(ks['s']||ks['arrowdown'])_di.z+=1;if(ks['a']||ks['arrowleft'])_di.x-=1;if(ks['d']||ks['arrowright'])_di.x+=1;
-if(_di.length()>0){mt=null;_di.normalize().multiplyScalar(spd*dt);_di.applyQuaternion(C.quaternion);_di.y=0;_np.copy(C.position).add(_di);var r3=res(_np.x,C.position.y,_np.z);C.position.set(r3.x,C.position.y,r3.z);var ho=parseFloat(H.style.opacity);ho=Math.max(0,ho-dt*1.5);H.style.opacity=ho;}
-if(mt){_to.copy(mt).sub(C.position);var dist=_to.length();if(dist<0.06){mt=null;H.style.opacity='0';}else{_to.normalize();var step=Math.min(3.8*dt,dist);_np2.copy(C.position).add(_to.multiplyScalar(step));var r4=res(_np2.x,C.position.y,_np2.z);C.position.set(r4.x,C.position.y,r4.z);var ho2=parseFloat(H.style.opacity);ho2=Math.max(0,ho2-dt*0.4);H.style.opacity=ho2;}}
+function anim(){if(!gallery3D||!gallery3D.active)return;requestAnimationFrame(anim);var dt=Math.min(clk.getDelta(),0.1);var spd=4.2,di=new THREE.Vector3();
+if(ks['w']||ks['arrowup'])di.z-=1;if(ks['s']||ks['arrowdown'])di.z+=1;if(ks['a']||ks['arrowleft'])di.x-=1;if(ks['d']||ks['arrowright'])di.x+=1;
+if(di.length()>0){mt=null;di.normalize().multiplyScalar(spd*dt);di.applyQuaternion(C.quaternion);di.y=0;var np=C.position.clone().add(di);var r3=res(np.x,C.position.y,np.z);C.position.set(r3.x,C.position.y,r3.z);H.style.opacity=Math.max(0,parseFloat(H.style.opacity)-dt*1.5);}
+if(mt){var to=mt.clone().sub(C.position),dist=to.length();if(dist<0.06){mt=null;H.style.opacity='0';}else{to.normalize();var step=Math.min(3.8*dt,dist);var np2=C.position.clone().add(to.multiplyScalar(step));var r4=res(np2.x,C.position.y,np2.z);C.position.set(r4.x,C.position.y,r4.z);H.style.opacity=Math.max(0,parseFloat(H.style.opacity)-dt*0.4);}}
 R.render(S,C);}
 gallery3D={active:true,resume:function(){this.active=true;O.classList.add('show');B.style.display='block';H.style.display='block';H.style.opacity='1';document.body.style.overflow='hidden';mt=null;W=window.innerWidth;hh=window.innerHeight;C.aspect=W/hh;C.updateProjectionMatrix();R.setSize(W,hh);}};anim();
 if(!galleryTutorial.completed){setTimeout(function(){initGalleryTutorial();},800);}}
@@ -2870,15 +2850,15 @@ function init() {
     if (saved && L[saved]) currentLang = saved;
   } catch(e) {}
 
-  try { setLang(currentLang); } catch(e) { console.warn('setLang:', e); }
-  try { renderHomeTags(); } catch(e) { console.warn('renderHomeTags:', e); }
-  try { renderProjects(); } catch(e) { console.warn('renderProjects:', e); }
-  try { renderResearch(); } catch(e) { console.warn('renderResearch:', e); }
-  try { renderNews(); } catch(e) { console.warn('renderNews:', e); }
-  try { renderContact(); } catch(e) { console.warn('renderContact:', e); }
-  try { handleHash(); } catch(e) { console.warn('handleHash:', e); }
-  try { startSlideshow(); } catch(e) { console.warn('startSlideshow:', e); }
-  try { runLoading(); } catch(e) { console.warn('runLoading:', e); }
+  setLang(currentLang);
+  renderHomeTags();
+  renderProjects();
+  renderResearch();
+  renderNews();
+  renderContact();
+  handleHash();
+  startSlideshow();
+  runLoading();
   if (!window.location.hash || window.location.hash === '#home') { document.getElementById('navbar').classList.add('nav-light'); }
 
   // Auto-close mobile nav on window resize
@@ -2937,8 +2917,8 @@ document.addEventListener('DOMContentLoaded', init);
     <span class="gallery-tutorial-hint-icon">⌨️</span>
     <div class="gallery-tutorial-hint-text">
       <span class="gallery-tutorial-hint-label">མཐེབ་གཞོང་བརྒྱུད་ནས་འགུལ།</span>
-      <span class="gallery-tutorial-hint-title">Drag to look · Tap to move</span>
-      <span class="gallery-tutorial-hint-desc">单指拖动旋转视角 · 点击地面移动位置</span>
+      <span class="gallery-tutorial-hint-title">Walk with joystick / WASD</span>
+      <span class="gallery-tutorial-hint-desc">使用虚拟摇杆或键盘自由行走 · 手机端使用左下角摇杆</span>
       <div class="gallery-tutorial-wasd" id="tutWasdKeys">
         <key>W</key><key>A</key><key>S</key><key>D</key>
       </div>
@@ -2953,13 +2933,13 @@ document.addEventListener('DOMContentLoaded', init);
 </div>
 
 <div class="gallery3d-overlay" id="gallery3dOverlay"></div>
-<button class="gallery3d-back" id="gallery3dBack" onclick="closeGallery3D()" style="display:none">← 退出</button>
-<div class="gallery3d-hint" id="gallery3dHint" style="display:none">拖动旋转 / 点击移动 / WASD</div>
+<button class="gallery3d-back" id="gallery3dBack" onclick="closeGallery3D()" style="display:none">EXIT GALLERY</button>
+<div class="gallery3d-hint" id="gallery3dHint" style="display:none">DRAG / CLICK / WASD</div>
 
 
 <div class="poster-lightbox" id="posterLightbox" onclick="this.classList.remove('show')">
   <button class="poster-lightbox-close" onclick="document.getElementById('posterLightbox').classList.remove('show')">&times;</button>
-  <img id="posterLightboxImg" src="" alt="" loading="lazy" decoding="async">
+  <img id="posterLightboxImg" src="" alt="">
 </div>
 
 <script>
